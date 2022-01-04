@@ -15,4 +15,3 @@ async function RateChange(){
 }
 
 window.onload = RateChange();
-

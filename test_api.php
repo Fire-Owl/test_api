@@ -22,10 +22,20 @@
 
 $json = file_get_contents('https://api.ibanfirst.com/PublicAPI/Rate/USDEUR/');
 $obj = json_decode($json);
-print_r($obj);
- echo $obj["rate"]["rate"];
-
+print_r($obj -> {'rate'});
 ?>
+
+
+<?php 
+
+$json = file_get_contents('https://api.ibanfirst.com/PublicAPI/Rate/USDEUR/');
+$obj = json_decode($json, true);
+?> 
+</div>
+
+<DIV><?php echo $obj{'rate'}{'rate'};?></DIV>
+<DIV><?php echo $obj{'date'}?></DIV>
+
 
 <script src="main.js"></script>
 </body>
