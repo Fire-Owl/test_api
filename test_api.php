@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -20,7 +18,7 @@
 
 <?php 
 
-$json = file_get_contents('https://api.ibanfirst.com/PublicAPI/Rate/USDEUR/');
+$json = file_get_contents('http://localhost/ibanFirst.php');
 $obj = json_decode($json);
 print_r($obj -> {'rate'});
 ?>
@@ -28,13 +26,14 @@ print_r($obj -> {'rate'});
 
 <?php 
 
-$json = file_get_contents('https://api.ibanfirst.com/PublicAPI/Rate/USDEUR/');
+$json = file_get_contents('http://localhost/ibanFirst.php');
 $obj = json_decode($json, true);
 ?> 
 </div>
 
-<DIV><?php echo $obj{'rate'}{'rate'};?></DIV>
+<DIV><?php echo $date = $obj{'rate'}{'rate'};?></DIV>
 <DIV><?php echo $obj{'date'}?></DIV>
+
 
 
 <script src="main.js"></script>
