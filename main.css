@@ -1,12 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap");
 * {
   padding: 0;
   margin: 0;
 }
 
+h1 {
+  font-family: 'Oswald', sans-serif;
+}
+
+p {
+  font-family: 'Roboto Mono', monospace;
+}
+
+#digital-clock__time {
+  font-family: 'Advent Pro', sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 section {
   width: 50%;
   margin: auto;
-  background-color: #C4C4C4;
+  background-color: #a8f2f5;
+}
+
+section .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
 }
 
 .div1 {
@@ -14,9 +48,22 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #9ceff1;
+  height: 50px;
 }
 
-.div1 span.span2 {
+.div1 #name {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 25px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.div1 .span2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,11 +73,14 @@ section {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 80%;
   margin-left: 20%;
 }
 
-.div1 span.span2 p {
+.div1 .span2 p {
   text-align: center;
 }
 
@@ -41,5 +91,7 @@ section {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding-left: 15px;
+  background-color: #daf9fa;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,21 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap');
+
 *{
     padding: 0;
     margin: 0;
 }
 
+h1{
+    font-family: 'Oswald', sans-serif;
+}
+p{
+    font-family: 'Roboto Mono', monospace;  
+}
+
+
+#digital-clock__time{
+    font-family: 'Advent Pro', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 section{
     width: 50%;
     margin: auto;
-    background-color: #C4C4C4 ;
+    background-color: rgb(168, 242, 245) ;
+        .header{
+            display: flex;
+            flex-direction: column ;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
 }
 
 .div1{
     width: 100%;
     display: flex;
-        span.span2{
+    background-color: rgb(156, 239, 241);
+    height: 50px;
+    #name{
+        align-items: center;
+        display: flex;
+        padding-left: 25px;
+        font-family: 'Oswald', sans-serif; 
+    }
+       .span2{
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            align-items: center;
             width: 80%;
             margin-left: 20%;
                 p{
@@ -28,5 +62,7 @@ section{
     margin-left: 25%;
     display: flex;
     justify-content: space-around;
+    padding-left: 15px;
+    background-color: rgb(218, 249, 250);
 }
 

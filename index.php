@@ -40,7 +40,7 @@ $date = date("Y-m-d");
 <body>
 
     <section>
-        <div>
+        <div class='header'>
             <span><h1>Taux de change</h1></span>
             <div id="digital-clock__time">
             <span id="digital-clock__time--hours"></span>
@@ -53,13 +53,13 @@ $date = date("Y-m-d");
         </div>
         <div>
             <span class="span1">
-                <span>taux actuel</span>
-                <span>taux max</span>
-                <span>taux mini</span>
+                <span> <p>taux actuel</p> </span>
+                <span> <p>taux max</p>  </span>
+                <span><p>taux mini</p></span>
             </span>
         </div>
         <div class='div1'>
-            <span><?=$taux_name?></span>
+            <span id='name'><?=$taux_name?></span>
             <span class='span2'>
                 <p><?=$taux_actuel?></p>
                 <p><?=$taux_max?></p>
