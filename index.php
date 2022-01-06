@@ -1,11 +1,36 @@
 <?php
 
-        require_once('db-connect.php');
-        $sql ='SELECT * FROM  `currency` ';       
-        $query = $db->prepare($sql);
-        $query ->execute();
-        $result = $query->fetch();
+$date = date("Y-m-d");
 
+        require_once('db-connect.php');
+        $viewProject = $db->query('SELECT * FROM currency  ORDER BY currencyID DESC LIMIT 1');
+        while ($viewProjectRespons = $viewProject->fetch()){
+        
+       $taux_actuel = $viewProjectRespons['currencyRate'];
+       $taux_name = $viewProjectRespons['currencyName'];
+        }
+
+
+            $viewProject= $db->prepare('SELECT * FROM currency WHERE currencyDate LIKE :date ORDER BY  currencyRate DESC LIMIT 1 ');
+            $viewProject->execute(array(
+            'date' => $date
+            ));
+
+        while ($viewProjectRespons = $viewProject->fetch()){
+        
+       $taux_max = $viewProjectRespons['currencyRate'];
+        
+    }   
+    $viewProject= $db->prepare('SELECT * FROM currency WHERE currencyDate LIKE :date ORDER BY  currencyRate ASC LIMIT 1 ');
+    $viewProject->execute(array(
+    'date' => $date
+    ));
+        while ($viewProjectRespons = $viewProject->fetch()){
+        
+       $taux_mini = $viewProjectRespons['currencyRate'];
+        
+    }   
+   
 ?>
   <!DOCTYPE html>
 <html lang="en">
@@ -18,32 +43,27 @@
 </head>
 <body>
 
-<section>
-    <div>
-        <span><h1>Taux de change</h1></span>
-        <span>Date et heure</span>
-    </div>
-    <div>
-    <span class="span1">
-            <span>taux actuel</span>
-            <span>taux max</span>
-            <span>taux mini</span>
-        </span>
-    </div>
-    <div class='div1'>
-
-        <span><?=$result['currencyName']?></span>
-        <span class='span2'>
-            <p><?=$result['currencyRate']?></p>
-            <p>100</p>
-            <p>100</p>
-        </span>
-    
-
-  
-    </div>
-
-</section>
+    <section>
+        <div>
+            <span><h1>Taux de change</h1></span>
+            <span>Date et heure</span>
+        </div>
+        <div>
+            <span class="span1">
+                <span>taux actuel</span>
+                <span>taux max</span>
+                <span>taux mini</span>
+            </span>
+        </div>
+        <div class='div1'>
+            <span><?=$taux_name?></span>
+            <span class='span2'>
+                <p><?=$taux_actuel?></p>
+                <p><?=$taux_max?></p>
+                <p><?=$taux_mini?></p>
+            </span>
+        </div>
+    </section>
 
     <?php
 
@@ -54,7 +74,6 @@
 <DIV><?php echo $obj{'rate'}{'instrument'};?></DIV>
 <DIV><?php echo $obj{'rate'}{'rate'};?></DIV>
 <DIV><?php echo $obj{'date'}?></DIV>
+
 </body>
 </html>
-
-
