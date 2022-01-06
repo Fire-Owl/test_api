@@ -10,7 +10,6 @@ section {
 }
 
 .div1 {
-  border: springgreen solid 1px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,7 +28,6 @@ section {
       justify-content: space-around;
   width: 80%;
   margin-left: 20%;
-  border: steelblue 1px solid;
 }
 
 .div1 span.span2 p {
@@ -37,7 +35,6 @@ section {
 }
 
 .span1 {
-  border: red 1px solid;
   margin-left: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
